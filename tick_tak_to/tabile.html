@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= <form action="">
+        <label for="">dropdown list</label>
+        <input type="text">
+        <label for="">value</label>
+        <input type="text">
+        <button onclick="getnumber()"> click</button>
+    </form>
+    
+    <script>
+        let getnumber=()=>{
+            event.preventDefault()
+            console.log("click");
+            let u=document.querySelectorAll("input")[0].value
+            let c=document.querySelectorAll("input")[1].value
+            console.log(u);
+            console.log(c);
+    
+        }
+   
+        let ol=document.createElement("ol")
+        let li1=document.createElement("li")
+        let li2=document.createElement("li");
+        li1.innerText="u"
+        li2.innerText="c"
+
+        ol.appendChild(li1)
+        ol.appendChild(li2)
+        document.body.append(ol)
+    </Script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        article {
+            height: 250px;
+            width: 250px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <article>
+            <div>
+
+
+            </div>
+        </article>
+
+    </section>
+
+
+    <script>
+
+        let section = document.querySelector("section")
+        let article = document.querySelector("article")
+        let div = document.querySelector("div")
+
+        section.addEventListener("click", () => {
+            section.style.backgroundColor = "red"
+            console.log("section");
+
+        })
+        article.addEventListener("click", () => {
+            article.style.backgroundColor = "green"
+            console.log("article");
+            // event.stopPropagation()
+        })
+        div.addEventListener("click", () => {
+            div.style.backgroundColor = "blue"
+            console.log("div");
+        })
+    </script>
+</body>
+
+</html>

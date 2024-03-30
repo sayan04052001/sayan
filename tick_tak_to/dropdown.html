@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* ==========css=========== */
+form{
+  display:flex;
+  flex-direction:column;
+  width:35vw;
+}
+form input{
+  padding:0.7em 1em;
+}
+form label{
+  padding:0.6em 1em;
+}
+form > button{
+  padding:1.1em;
+  margin:1em 1em;
+  cursor:pointer;
+}
+ul{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-content:center;
+  width:25vw;
+
+
+
+}
+ul li{
+  padding:1em 2em .8em 2em;
+  border:1px solid black;
+
+}
+button{
+  padding:1.1em;
+  margin:1em 1em;
+  cursor:pointer;
+}
+
+
+    </style>
+</head>
+<body>
+    <form action="#" id="formSubmission" method="get">
+
+
+
+        <label for="list">dropdown list</label>
+          <!-- <input type="text" placeholder="dropdown" id="dropdown">  -->
+        <select name="list" id="lest" id="dropdown">
+            <option value="TRANSPORT">TRANSPORT TOTAL</option>
+            <option value="food">food total</option>
+            <option value="">misuleanous total</option>
+        </select> 
+
+
+
+
+        <label>value</label>
+        <input type="text" placeholder="value" id="value">
+        <label>price</label>
+    <input type="number" placeholder="price" id="price">
+        <button type="submit">Submit</button>
+      </form>
+     <ul id="data">
+       <li>dropdown list</li>
+       <li>value</li>
+       <li>price</li>
+     </ul>
+      <!-- <button onclick="document.location='report.html'">next page</button>  -->
+     <button><a href="./report.htm">next page</a></button>
+     <!-- ===========js============= -->
+<script>
+let form=document.getElementById("formSubmission");
+
+let table=document.getElementById('data');
+form.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  submit();
+})
+
+
+const submit=()=>{
+  let dropdown = document.getElementsByTagName("select").value;
+    let value= document.getElementById("value").value;
+    let price = document.getElementById("price").value;
+    let data= document.getElementById("data").value;
+
+
+  let newArray = [dropdown,value,price];
+  newArray.forEach((item)=>{
+      var li = document.createElement("li");
+  var text = document.createTextNode(item);
+  li.appendChild(text);
+  table.appendChild(li);
+  })
+  form.reset(); 
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
